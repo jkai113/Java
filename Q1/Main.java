@@ -26,16 +26,11 @@ public class Main {
                 case 4:
                 p.ListaContato();
                 break;
-            }    
+            }
+            teclado.close();    
         }
         
 
-
-    }
-    public static void CriaContato(){
-
-    }
-    public static void RemoveContato(){
 
     }
 

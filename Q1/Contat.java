@@ -1,11 +1,14 @@
 package Q1;
 
+import java.sql.Date;
 import java.util.HashMap;
 
 
-public class Contat extends End {
+public class Contat {
     private String nome;
-    private int Rg;
+    private String Rg;
+    private String dataNaci;
+
     private HashMap<String,String> email;
     private HashMap<String,String> telefone;
     private HashMap<String,String> enderesso;
@@ -18,11 +21,11 @@ public class Contat extends End {
         this.nome = nome;
     }
     //getters e setters do RG
-    public int getRg() {
+    public String getRg() {
         return Rg;
     }
-    public void setRg(int rg) {
-        Rg = rg;
+    public void setRg(String rg) {
+        this.Rg = rg;
     }
     //getters e setters de EMAIL
     public HashMap<String, String> getEmail() {
@@ -40,9 +43,10 @@ public class Contat extends End {
     }
 
     //criando a construtora
-    public Contat(String nome,int Rg){
+    public Contat(String dataNaci, String nome, String Rg){
         this.nome = nome;
         this.Rg = Rg;
+        this.dataNaci = dataNaci;
         this.email = new HashMap<String, String>();
         this.telefone = new HashMap<String, String>();
         this.enderesso = new HashMap<String, String>();
