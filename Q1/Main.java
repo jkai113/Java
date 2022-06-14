@@ -11,7 +11,7 @@ public class Main {
         while(true){
             
             System.out.println("********MENU********");
-            System.out.println("O que deseja fazer? \n 1- Criar contato. \n 2 - Remover contato. \n 3-Editar contato \n 4 - Listar em orderm alfabética.");
+            System.out.println("O que deseja fazer? \n 1- Criar contato. \n 2 - Remover contato. \n 3- Editar contato \n 4 - Listar em orderm alfabética.");
             op = teclado.nextInt();
             switch(op){
                 case 1:
@@ -26,8 +26,11 @@ public class Main {
                 case 4:
                 p.ListaContato();
                 break;
+                default:
+                System.out.println("Inválido");
+                break;
             }
-            teclado.close();    
+                
         }
         
 

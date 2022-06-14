@@ -4,57 +4,105 @@ import java.sql.Date;
 import java.util.HashMap;
 
 
-public class Contat {
+public class Contat implements Comparable<Contat>{
     private String nome;
     private String Rg;
-    private String dataNaci;
+    private String dataNasci;
 
-    private HashMap<String,String> email;
-    private HashMap<String,String> telefone;
-    private HashMap<String,String> enderesso;
+    private HashMap<Integer,String> Semail;
+    private HashMap<Integer,String> Memail;
+    private HashMap<Integer,String> telComercial;
+    private HashMap<Integer,String> telCelular;
+    private HashMap<Integer,String> telResidencial;
+    private HashMap<Integer,End> EndComercial;
+    private HashMap<Integer,End> EndResidencial;
 
-    //getters e setters do NOME
+  
+
+  
+
+    //criando a construtora
+    public Contat(String dataNasci, String nome, String Rg) {
+        this.nome = nome;
+        this.Rg = Rg;
+        this.dataNasci = dataNasci;
+        this.Semail = new HashMap<Integer, String>();
+        this.Memail = new HashMap<Integer, String>();
+        this.telComercial = new HashMap<Integer, String>();
+        this.telCelular = new HashMap<Integer, String>();
+        this.telResidencial = new HashMap<Integer, String>(); 
+        this.EndComercial = new HashMap<Integer, End>(); 
+        this.EndResidencial = new HashMap<Integer, End>();
+    }
     public String getNome() {
         return nome;
+    }
+    public String getRg() {
+        return Rg;
+    }
+    public String getDataNasci() {
+        return dataNasci;
+    }
+    public HashMap<Integer, End> getEndComercial() {
+        return EndComercial;
+    }
+    public HashMap<Integer, End> getEndResidencial() {
+        return EndResidencial;
+    }
+    public HashMap<Integer, String> getMemail() {
+        return Memail;
+    }
+    public HashMap<Integer, String> getSemail() {
+        return Semail;
+    }
+    public HashMap<Integer, String> getTelCelular() {
+        return telCelular;
+    }
+    public HashMap<Integer, String> getTelComercial() {
+        return telComercial;
+    }
+    public HashMap<Integer, String> getTelResidencial() {
+        return telResidencial;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
-    //getters e setters do RG
-    public String getRg() {
-        return Rg;
-    }
     public void setRg(String rg) {
         this.Rg = rg;
     }
-    //getters e setters de EMAIL
-    public HashMap<String, String> getEmail() {
-        return email;
+    public void setDataNasci(String dataNasci) {
+        this.dataNasci = dataNasci;
     }
-    public void setEmail(HashMap<String, String> email) {
-        this.email = email;
+    public void setEndComercial(HashMap<Integer, End> endComercial) {
+        EndComercial = endComercial;
     }
-    //getters e setters de Telefone
-    public HashMap<String, String> getTelefone() {
-        return telefone;
+    public void setEndResidencial(HashMap<Integer, End> endResidencial) {
+        EndResidencial = endResidencial;
     }
-    public void setTelefone(HashMap<String, String> telefone) {
-        this.telefone = telefone;
+    public void setMemail(HashMap<Integer, String> memail) {
+        Memail = memail;
     }
-
-    //criando a construtora
-    public Contat(String dataNaci, String nome, String Rg){
-        this.nome = nome;
-        this.Rg = Rg;
-        this.dataNaci = dataNaci;
-        this.email = new HashMap<String, String>();
-        this.telefone = new HashMap<String, String>();
-        this.enderesso = new HashMap<String, String>();
+    public void setSemail(HashMap<Integer, String> semail) {
+        Semail = semail;
     }
-    //Criando a Saida
-    @Override 
-    public String toString() {        
-        return String.format("Nome: %s;RG: %d;Email: %s;Telefone: %s;Enderesso: %s;",nome,Rg,email,telefone,enderesso);
+    public void setTelCelular(HashMap<Integer, String> telCelular) {
+        this.telCelular = telCelular;
     }
-    
+    public void setTelComercial(HashMap<Integer, String> telComercial) {
+        this.telComercial = telComercial;
+    }
+    public void setTelResidencial(HashMap<Integer, String> telResidencial) {
+        this.telResidencial = telResidencial;
+    }
+    @Override
+    public int compareTo(Pessoa o) {
+        //typecast de o para Pessoa
+        //Pessoa p = (Pessoa) o;
+        if(this.idade > o.idade){
+            return 1;
+        }else if(this.idade < o.idade){
+            return -1;
+        }
+        return 0;
+    }
 }
