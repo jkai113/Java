@@ -95,14 +95,7 @@ public class Contat implements Comparable<Contat>{
         this.telResidencial = telResidencial;
     }
     @Override
-    public int compareTo(Pessoa o) {
-        //typecast de o para Pessoa
-        //Pessoa p = (Pessoa) o;
-        if(this.idade > o.idade){
-            return 1;
-        }else if(this.idade < o.idade){
-            return -1;
-        }
-        return 0;
+    public int compareTo(Contat o) {
+       return this.nome.compareTo(o.nome);
     }
 }

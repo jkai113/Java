@@ -15,7 +15,9 @@ public class funcs {
 
 
     public void CriaContato(){
+        // Index da agenda
         CodAgenda++;
+        // Catando os dados da agenda
         System.out.println("*********Dados Principais*********");
         System.out.println("Digite o nome do contato: ");
         dados[0] = teclado.nextLine();
@@ -94,10 +96,9 @@ public class funcs {
         a.getEndResidencial().put(CodAgenda, c);
     }
     public void RemoveContato(){
-
+        
     }
     public void EditaContato(){
-
 
     }
 
