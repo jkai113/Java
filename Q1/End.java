@@ -53,7 +53,17 @@ public class End {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-    
+    @Override
+    public String toString() {
+       
+        return String.format(" Logradouro: " +  Logradouro + 
+        "\n Numero: " + numero +
+        "\n Complemento: " + Complemento +
+        "\n Bairro: " + Bairro + 
+        "\n CEP: " + CEP + 
+        "\n Cidade: " +Cidade); 
+  
+    }
 
     
 }

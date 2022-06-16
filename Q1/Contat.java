@@ -8,6 +8,14 @@ public class Contat implements Comparable<Contat>{
     private String nome;
     private String Rg;
     private String dataNasci;
+    private int indexContat;
+    private int CodmailP;
+    private int CodmailS;
+    private int Codendcomerc;
+    private int Codendresidencial;
+    private int CodTelCel;
+    private int CodTelResi;
+    private int CodTelComerc;
 
     private HashMap<Integer,String> Semail;
     private HashMap<Integer,String> Memail;
@@ -16,13 +24,22 @@ public class Contat implements Comparable<Contat>{
     private HashMap<Integer,String> telResidencial;
     private HashMap<Integer,End> EndComercial;
     private HashMap<Integer,End> EndResidencial;
+    
 
   
 
   
 
     //criando a construtora
-    public Contat(String dataNasci, String nome, String Rg) {
+    public Contat(String dataNasci, String nome, String Rg, int indexContat, int CodmailP, int CodmailS, int Codendcomerc, int Codendresidencial, int CodTelCel, int CodTelResi, int CodTelComerc) {
+        this.indexContat = indexContat;
+        this.CodmailP = CodmailP;
+        this.CodmailS = CodmailS;
+        this.Codendcomerc = Codendcomerc;
+        this.Codendresidencial =Codendresidencial;
+        this.CodTelCel = CodTelCel;
+        this.CodTelResi = CodTelResi;
+        this.CodTelComerc = CodTelComerc;
         this.nome = nome;
         this.Rg = Rg;
         this.dataNasci = dataNasci;
@@ -33,6 +50,27 @@ public class Contat implements Comparable<Contat>{
         this.telResidencial = new HashMap<Integer, String>(); 
         this.EndComercial = new HashMap<Integer, End>(); 
         this.EndResidencial = new HashMap<Integer, End>();
+    }
+    public int getCodTelCel() {
+        return CodTelCel;
+    }
+    public int getCodTelComerc() {
+        return CodTelComerc;
+    }
+    public int getCodTelResi() {
+        return CodTelResi;
+    }
+    public int getCodendcomerc() {
+        return Codendcomerc;
+    }
+    public int getCodendresidencial() {
+        return Codendresidencial;
+    }
+    public int getCodmailP() {
+        return CodmailP;
+    }
+    public int getCodmailS() {
+        return CodmailS;
     }
     public String getNome() {
         return nome;
@@ -98,5 +136,24 @@ public class Contat implements Comparable<Contat>{
     public int compareTo(Contat o) {
        return this.nome.compareTo(o.nome);
     }
+    @Override
+    public String toString() {
+        
+        return String.format("----------------------------------------- \n Nome: " + nome +" \n"+
+                            "RG: " +Rg +"\n" +
+                            "Data de Nascimento : " + dataNasci +"\n" +
+                            "------------Emails------------------\n" +
+                            "Email Principal: " + Memail.get(getCodmailP()) +"\n" +
+                            "Email Secundário: "+ Semail.get(getCodmailS()) +"\n" +
+                            "------------Telefones------------------\n" +
+                            "Telefone Comercial: "+ telComercial.get(getCodTelComerc()) + "\n" +
+                            "Telefone Residencial: " + telResidencial.get(getCodTelResi()) + "\n" +
+                            "Telefone Celular: " + telCelular.get(getCodTelCel())+ "\n" +
+                            "------------Endereços------------------\n" +
+                            "Endereço comercial: \n" + EndComercial.get(getCodendcomerc()) +"\n Endereço Residencial: \n"+ EndResidencial.get(getCodTelResi()) );
+    }
     
+    public int getIndexContat() {
+        return indexContat;
+    }
 }
