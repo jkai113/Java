@@ -1,14 +1,16 @@
 package Q1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class funcs {
-    ArrayList<Contat> AgendaArrayList = new ArrayList<>();
+    ArrayList<Object> AgendaArrayList = new ArrayList();    
     private int CodAgenda = -1;
     Scanner teclado = new Scanner(System.in);
     String[] dados = new String[20];
+    
     public funcs(){
        
     }
@@ -27,7 +29,7 @@ public class funcs {
         dados[2] = teclado.nextLine();
 
         Contat a = new Contat(dados[1], dados[0], dados[2]);
-       
+        AgendaArrayList.add(a);
 
         System.out.println("Digite o e-mail principal do contato: ");
         dados[3] = teclado.nextLine();
@@ -94,26 +96,29 @@ public class funcs {
 
         End c = new End(dados[14],  dados[15], dados[16],  dados[17], dados[18],  dados[19]);
         a.getEndResidencial().put(CodAgenda, c);
+
     }
     public void RemoveContato(){
         
     }
     public void EditaContato(){
-
+        
     }
 
     public void ListaContato(){
-        Colletions.sort(Contat);
-        for (Contat af : AgendaArrayList) {
-            System.out.println(af);
+        Collections.sort(AgendaArrayList);
+        int n = AgendaArrayList.size();
+        int i;
+        for (i=0; i<n; i++) {
+            System.out.println( "Código do contato: " + i+ "\n");
+            System.out.println("Posição %d- %s\n", i, agenda.get(i));
         }
-
     }
 
     //Criando a Saida
-     @Override 
-     public String toString()  {        
-         return String.format();
-     }
+    //  @Override 
+    //  public String toString()  {        
+    //      return String.format();
+    //  }
      
 }
